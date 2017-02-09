@@ -1,0 +1,40 @@
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #eee;
+    background-image: url(../images/login.jpg);
+    background-size: cover;
+    height: 680px;
+}
+
+.confirm-container {
+    text-align: center;
+    overflow: hidden;
+    background-color: white;
+    border-radius: 6px;
+    z-index: 1;
+    background-size: cover;
+    padding-left: 2%;
+    padding-right: 2%;
+    height: 100%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10%;
+}
+
+.red-words{
+    color: #880909;
+}
+
+.help {
+    color: #B13B3B !important;
+}
+
+.btn-submit {
+    background: #B13B3B;
+    padding: 3px 2%;
+    border: 2px solid #B13B3B;
+    color: white;
+    margin-left: 2%;
+}

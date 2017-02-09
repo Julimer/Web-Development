@@ -1,0 +1,300 @@
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #eee;
+    background-image: url(../images/background.jpg);
+    height: auto;
+    opacity: 0.92;
+}
+
+.sidebar {
+    height: auto !important;
+}
+
+.navbar-nav > li > a {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.navbar {
+    min-height: 20px !important
+}
+
+.profile-container {
+    opacity: 0.95;
+}
+
+.profile-tag {
+    color: #B13B3B;
+    font-weight: bold;
+}
+
+.profile-image {
+    position: absolute;
+    z-index: 1;
+    top: 80px !important;
+    left: 50% !important;
+    transform: translate(-50%, 0) !important;
+}
+
+.profile-username {
+    position: absolute;
+    z-index: 1;
+    top: 218px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.profile-addfriend {
+    position: absolute;
+    z-index: 1;
+    top: 250px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.profile-content {
+    position: absolute;
+    z-index: 1;
+    top: 305px;
+    margin-bottom: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.self-profile-content {
+    position: absolute;
+    z-index: 1;
+    top: 255px;
+    margin-bottom: 100px;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.img-circle {
+    margin-top: 10%;
+    margin-right: 10px;
+}
+
+.btn-icon-left {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-top: 10%;
+    margin-right: 2px;
+}
+
+.btn-icon-mid {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-top: 10%;
+    margin-right: 6px;
+}
+
+.btn-icon-right {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-top: 6%;
+    margin-right: 30px;
+}
+
+.nav-glyphicon {
+    color: white;
+    font-size: 2em;
+}
+
+.post-container {
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    border-radius: 6px;
+    z-index: 1;
+    min-height: 180px;
+    background-size: cover;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 5%;
+    margin-left: 15%;
+}
+
+.post-photo {
+    position: absolute;
+    z-index: 1;
+    top: 12px;
+    left: 50px;
+    transform: translate(-50%, 0);
+}
+
+.post-name {
+    position: absolute;
+    z-index: 1;
+    top: 22px;
+    left: 115px;
+    transform: translate(-50%, 0);
+}
+
+.post-time {
+    position: absolute;
+    z-index: 1;
+    top: 24px;
+    right: 40px;
+    /*transform:translate(-50%,0);*/
+    font-size: 12px;
+}
+
+.post-content {
+    position: absolute;
+    z-index: 1;
+    top: 55px;
+    left: 95px;
+    right: 25px;
+    font-family: "Arial";
+    font-weight: lighter !important;
+}
+
+.post-like {
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    right: 23%;
+}
+
+.post-comment {
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    right: 10%;
+}
+
+.comments-container {
+    position: relative;
+    z-index: 1;
+    top: 40px;
+    left: 5px;
+    right: 5px;
+}
+
+.comment-textarea {
+    margin-top: 20px;
+    width: 100%;
+    height: 20px;
+}
+
+.btn-comment {
+    background: #B13B3B;
+    padding: 2px 4px;
+    border: 1px solid #B13B3B;
+    color: white;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+.comment-form {
+}
+
+.comments-list-container {
+    position: relative;
+    z-index: 1;
+    top: 20px;
+    left: 5px;
+    right: 5px;
+}
+
+.comments-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.comment {
+    position: relative;
+}
+
+.comment-text {
+    position: relative;
+    left: 10px;
+}
+
+.btn-login {
+    background: none;
+    padding: 6px 25px;
+    border: 2px solid #B13B3B;
+    color: #B13B3B;
+    margin-left: -10%;
+}
+
+.btn-add {
+    text-align: center;
+    background: #880909;
+    border: 2px solid #880909;
+    color: white;
+    width: 100px;
+    height: 35px;
+    padding: 8px 16px !important;
+    font-size: 14px !important;
+}
+
+.register-container {
+    text-align: center;
+    border-radius: 6px;
+    overflow: hidden;
+    position: absolute;
+    background-color: white;
+    z-index: 1;
+    opacity: 0.8;
+    background-size: cover;
+    padding-left: 2%;
+    padding-right: 2%;
+    height: 100%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+log.container {
+    background-image: url("https://static.pexels.com/photos/26135/pexels-photo-26135.jpg");
+}
+
+.form-signin {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+    margin-bottom: 10px;
+}
+
+.form-signin .checkbox {
+    font-weight: normal;
+}
+
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}

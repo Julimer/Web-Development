@@ -1,0 +1,181 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Global Stream{% endblock %}
+
+{% block style %}
+    <link href="{% static 'css/grumblr.css' %}" rel="stylesheet">
+    <link href="{% static 'css/globalStream.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar_header %}
+    <a href="{% url 'globalStream' %}" class="navbar-brand" href="#">Grumblr</a>
+{% endblock %}
+
+{% block navbar_right %}
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <div>
+                <a href="{% url 'profile' user.id %}">
+                    <img src="{{ user.profile.picture.url }}" class="img-circle" alt="personal icon" width="43"
+                         height="43">
+                </a>
+            </div>
+        </li>
+        <li>
+            <a type="button" class="btn btn-default btn-md btn-icon-left" href="{% url 'editProfile' %}">
+                <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+            </a>
+        </li>
+        <li>
+            <a type="button" class="btn btn-default btn-md btn-icon-left" href="{% url 'globalStream' %}">
+                <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+            </a>
+        </li>
+        <li>
+            <button type="button" class="btn btn-default btn-md btn-icon-mid">
+                <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+            </button>
+        </li>
+        <li>
+            <a type="button" class="btn btn-default btn-md btn-icon-right" href="{% url 'userlogout' %}">
+                <span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+
+
+{% block content %}
+    <div id="marker"></div>
+
+    <div id="follow_post_list">
+        {% for post in posts %}
+            <div id="post-{{ post.id }}" class="well post-container">
+                <a href="{% url 'profile' post.user.id %}" class="post-photo">
+                    <img src="{{ post.user.profile.picture.url }}" class="img-circle" alt="personal icon" width="50"
+                         height="50">
+                </a>
+                <div class="post-name">
+                    <label>{{ post.user.username }}</label>
+                </div>
+                <div class="post-time">
+                    <p>{{ post.time }}</p>
+                </div>
+                <div class="post-content">
+                    <p>{{ post.text }}</p>
+                </div>
+
+                <div class="comments-container">
+                    <form class="comment-form" method="post">
+                        {% csrf_token %}
+                        <input type="hidden" id="comment-of" value="{{ post.id }}">
+                        <br>
+                        <div class="col-sm-9">
+                            <input type="text" id="comment-input-{{ post.id }}" name="content" maxlength="200"
+                                   placeholder="Add a comment..." class="form-control" required/>
+                        </div>
+                        <input type="submit" id="comment-btn-{{ post.id }}" class="btn btn-primary btn-comment" value="Comment">
+
+                    </form>
+
+                    <ol id="comments-list-{{ post.id }}" class="comments-list">
+                        {% for comment in post.comment_of.all %}
+                            <li id="comment-{{ comment.id }}" class="comment">
+                                <div class="row">
+                                    <div id="comment-userprofile" class="col-sm-1">
+                                        <a href="{% url 'profile' comment.user.id %}" class="comment-photo">
+                                            <img src="{{ comment.user.profile.picture.url }}" class="img-rounded"
+                                                 alt="personal icon" width="30" height="30">
+                                        </a>
+                                    </div>
+                                    <div class="col-sm-10 comment-text">
+                                        <span><label id="comment-username">{{ comment.user.username }}</label></span>
+                                        <span><label id="comment-time">{{ comment.time }}</label></span>
+                                        <p id="comment-content">{{ comment.content }}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                    <br>
+                </div>
+
+            </div>
+
+        {% endfor %}
+    </div>
+
+{#    <div id="follow_post_list">#}
+{#        {% for post in posts %}#}
+{#            <div id="post-{{ post.id }}" class="well post-container">#}
+{#                <a href="{% url 'profile' post.user.id %}" class="post-photo">#}
+{#                    <img src="{{ post.user.profile.picture.url }}" class="img-circle" alt="personal icon" width="50"#}
+{#                         height="50">#}
+{#                </a>#}
+{#                <div class="post-name">#}
+{#                    <label>{{ post.user.username }}</label>#}
+{#                </div>#}
+{#                <div class="post-time">#}
+{#                    <p>{{ post.time }}</p>#}
+{#                </div>#}
+{#                <div class="post-content">#}
+{#                    <p>{{ post.text }}</p>#}
+{#                </div>#}
+{##}
+{#                <div class="comments-container">#}
+{#                    <form class="comment-form" method="post">#}
+{#                        {% csrf_token %}#}
+{#                        <input type="hidden" id="comment-of" value="{{ post.id }}">#}
+{#                        <!--comment form errors-->#}
+{#                        {% if comment_form.errors %}#}
+{#                            {% for field in comment_form %}#}
+{#                                <div id="form-error" class="col-sm-7 error-msg">#}
+{#                                    <p>{{ field.errors|striptags }}</p>#}
+{#                                </div>#}
+{#                            {% endfor %}#}
+{#                        {% endif %}#}
+{#                        <br>#}
+{#                        <div class="col-sm-9">#}
+{#                            <input type="text" id="comment-input" name="content" maxlength="20"#}
+{#                                   placeholder="Add a comment..." class="form-control" required/>#}
+{#                        </div>#}
+{#                        <input type="submit" class="btn btn-primary btn-comment" value="Comment">#}
+{##}
+{#                    </form>#}
+{##}
+{#                    <ol class="comments-list">#}
+{#                        {% for comment in post.comment_of.all %}#}
+{#                            <li id="comment-{{ comment.id }}" class="comment">#}
+{#                                <div class="row">#}
+{#                                    <div id="comment-userprofile" class="col-sm-1">#}
+{#                                        <a href="{% url 'profile' comment.user.id %}" class="comment-photo">#}
+{#                                            <img src="{{ comment.user.profile.picture.url }}" class="img-rounded"#}
+{#                                                 alt="personal icon" width="30" height="30">#}
+{#                                        </a>#}
+{#                                    </div>#}
+{#                                    <div class="col-sm-10 comment-text">#}
+{#                                        <span><label id="comment-username">{{ comment.user.username }}</label></span>#}
+{#                                        <span><label id="comment-time">{{ comment.time }}</label></span>#}
+{#                                        <p id="comment-content">{{ comment.content }}</p>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </li>#}
+{#                        {% endfor %}#}
+{#                    </ol>#}
+{#                    <br>#}
+{#                </div>#}
+{##}
+{#            </div>#}
+{##}
+{#        {% endfor %}#}
+{#    </div>#}
+
+    <div id="max_time" hidden>{{ max_time }}</div>
+
+    <!--followStream post js-->
+    <script src="/static/js/followStream.js" type="text/javascript"></script>
+
+{% endblock %} <!-- /container -->
+

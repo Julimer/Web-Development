@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Wait for confirmation{% endblock %}
+
+{% block style %}
+    <link href="{% static 'css/grumblr.css' %}" rel="stylesheet">
+    <link href="{% static 'css/confirmEmail.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar_header %}
+    <a href="{% url 'userlogin' %}" class="navbar-brand" href="#">Grumblr</a>
+{% endblock %}
+
+{% block navbar_right %}
+    <ul class="nav navbar-nav navbar-right">
+        <li class="nav-click"><a href="{% url 'userlogin' %}" class="nav-href">Log in</a></li>
+        <li class="nav-click"><a href="{% url 'register' %}" class="nav-href">Sign up</a></li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="confirm-container">
+    {% if not already_active %}
+        <h4>Congratulations!</h4>
+        <h4>Your account is activated, start your Grumblr now!</h4>
+    {% else %}
+        <h4>Your account is already activated. Enjoy it!</h4>
+    {% endif %}
+    </div>
+{% endblock %}

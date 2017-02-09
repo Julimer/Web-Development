@@ -1,0 +1,96 @@
+body {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    background-color: #eee;
+    background-image: url(../images/register.jpg);
+    background-size: cover;
+    height: 780px;
+}
+
+.navbar-nav > li > a {
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+.navbar {
+    min-height: 20px !important
+}
+
+.red-words{
+    color: #880909;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.img-circle {
+    margin-top: 10%;
+    margin-right: 10px;
+}
+
+.btn-icon-left {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-top: 10%;
+    margin-right: 2px;
+}
+
+.btn-icon-mid {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-top: 10%;
+    margin-right: 6px;
+}
+
+.btn-icon-right {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-top: 6%;
+    margin-right: 30px;
+}
+
+.nav-glyphicon {
+    color: white !important;
+    font-size: 2em !important;
+}
+
+.register-container {
+    text-align: center;
+    border-radius: 6px;
+    overflow: hidden;
+    /*position: absolute;*/
+    background-color: white;
+    z-index: 1;
+    opacity: 0.8;
+    background-size: cover;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 5%;
+    height: 100%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.form-element {
+    margin-top: 40px;
+}
+
+.reg-welcome {
+    margin-top: 60px;
+    color: #880909;
+}
+
+.btn-register {
+    text-align: center;
+    background: #880909;
+    padding: 6px 25px;
+    border: 2px solid #880909;
+    color: white;
+    width: 40%;
+    margin-top: 10px;
+}
+
+

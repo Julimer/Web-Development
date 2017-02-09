@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Just one step away{% endblock %}
+
+{% block style %}
+    <link href="{% static 'css/grumblr.css' %}" rel="stylesheet">
+    <link href="{% static 'css/register.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar_header %}
+    <a href="{% url 'userlogin' %}" class="navbar-brand" href="#">Grumblr</a>
+{% endblock %}
+
+{% block navbar_right %}
+    <a class="btn btn-primary btn-md btn-return-login" href="{% url 'userlogin' %}">
+        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+    </a>
+{% endblock %}
+
+{% block content %}
+    <div class="register-container">
+        <form class="form-horizontal" method="post" action="{% url 'register' %}">
+            {% csrf_token %}
+
+            <h2 class="reg-welcome">Welcome to Grumblr.</h2>
+            <div class="form-group form-element">
+
+                {% if register_form.errors %}
+                    {% for field in register_form %}
+                        <div id="form-error" class="col-sm-7 col-sm-offset-3">
+                            <p>{{ field.errors|striptags }}</p>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+                <div id="form-error" class="col-sm-7 col-sm-offset-3">
+                    {{ register_form.non_field_errors }}
+                </div>
+
+            </div>
+
+            {% if profile_form.errors %}
+                {% for field in profile_form %}
+                    <div id="form-error" class="col-sm-7 col-sm-offset-3">
+                        <p>{{ field.errors|striptags }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <div class="form-group form-element">
+                <label for="username" class="col-sm-3 control-label">{{ register_form.username.label }}</label>
+                <div class="col-sm-7">
+                    {{ register_form.username }}
+                </div>
+            </div>
+            <div class="form-group form-element">
+                <label for="firstName" class="col-sm-3 control-label">{{ register_form.first_name.label }}</label>
+                <div class="col-sm-7">
+                    {{ register_form.first_name }}
+                </div>
+            </div>
+            <div class="form-group form-element">
+                <label for="lastName" class="col-sm-3 control-label">{{ register_form.last_name.label }}</label>
+                <div class="col-sm-7">
+                    {{ register_form.last_name }}
+                </div>
+            </div>
+            <div class="form-group form-element">
+                <label for="email" class="col-sm-3 control-label">{{ register_form.email.label }}</label>
+                <div class="col-sm-7">
+                    {{ register_form.email }}
+                </div>
+            </div>
+            {#            <div class="form-group form-element">#}
+            {#                <label for="age" class="col-sm-3 control-label">Age</label>#}
+            {#                <div class="col-sm-7">#}
+            {#                    <input type="number" id="age" name="age" value="{{ age }}" placeholder="e.g. 28" class="form-control">#}
+            {#                    {{ profile_form.age }}#}
+            {#                </div>#}
+            {#            </div>#}
+            {#            <div class="form-group form-element">#}
+            {#                <label for="bio" class="col-sm-3 control-label">Bio</label>#}
+            {#                <div class="col-sm-7">#}
+            {#                    <input type="text" id="bio" name="bio" value="{{ bio }}" placeholder="420 characters max. e.g.My heart is in the Grumblr" class="form-control">#}
+            {#                    {{ profile_form.bio }}#}
+            {#                </div>#}
+            {#            </div>#}
+            <div class="form-group form-element">
+                <label for="password" class="col-sm-3 control-label">{{ register_form.password1.label }}</label>
+                <div class="col-sm-7">
+                    {{ register_form.password1 }}
+                </div>
+            </div>
+            <div class="form-group form-element">
+                <label for="password" class="col-sm-3 control-label">{{ register_form.password2.label }}</label>
+                <div class="col-sm-7">
+                    {{ register_form.password2 }}
+                </div>
+            </div>
+
+            <div class="form-group form-element reg-btn-div">
+                <div class="col-sm-7 col-sm-offset-3">
+                    <button type="submit" class="btn btn-register">Register</button>
+                </div>
+            </div>
+        </form> <!-- /form -->
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,236 @@
+body {
+    background-image: url(../images/background.jpg);
+    background-size: cover;
+    height: 680px;
+    opacity: 0.93;
+}
+
+.img-circle {
+    margin-top: 10%;
+    margin-right: 10px;
+}
+
+.btn-icon-left {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-top: 10%;
+    margin-right: 2px;
+}
+
+.btn-icon-mid {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-top: 10%;
+    margin-right: 6px;
+}
+
+.btn-icon-right {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    margin-top: 6%;
+    margin-right: 30px;
+}
+
+.glyphicon-bell {
+    color: white !important;
+    font-size: 2em !important;
+}
+
+.glyphicon-log-out {
+    color: white !important;
+    font-size: 2em !important;
+}
+
+.glyphicon-edit {
+    color: white !important;
+    font-size: 2em !important;
+}
+
+.glyphicon-home {
+    color: white !important;
+    font-size: 2em !important;
+}
+
+.glyphicon-heart {
+    color: white !important;
+    font-size: 2em !important;
+}
+
+.glyphicon-plus-sign {
+    color: gray;
+    font-size: 2em;
+}
+
+.input-newpost {
+    resize: both;
+    width: 420px;
+    height: 80px;
+    resize: horizontal;
+}
+
+.globalstream-container {
+    text-align: center;
+    overflow: hidden;
+    background-color: gray;
+    background-size: cover;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 100%;
+    height: 100%;
+}
+
+.error-msg {
+    margin-top: 15px !important;
+    margin-bottom: 0px !important;
+    color: #B13B3B;
+}
+
+.newpost-container {
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    border-radius: 6px;
+    z-index: 1;
+    background-size: cover;
+    padding-left: 2%;
+    padding-right: 2%;
+    height: 160px;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 3%;
+}
+
+.newpost-textarea {
+    margin-top: 20px;
+    width: 100%;
+    height: 60px;
+}
+
+.newpost-area {
+    padding-top: 5px;
+    height: 160px;
+    width: 100%;
+}
+
+.btn-post {
+    background: #B13B3B;
+    padding: 3px 14px;
+    border: 1px solid #B13B3B;
+    color: white;
+    margin-left: 84%;
+    margin-top: 8px;
+}
+
+.post-container {
+    text-align: left;
+    overflow: hidden;
+    position: relative;
+    background-color: white;
+    border-radius: 6px;
+    z-index: 1;
+    background-size: cover;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 2%;
+}
+
+.post-photo {
+    position: absolute;
+    z-index: 1;
+    top: 12px;
+    left: 50px;
+    transform: translate(-50%, 0);
+}
+
+.post-name {
+    position: absolute;
+    z-index: 1;
+    top: 22px;
+    left: 115px;
+    transform: translate(-50%, 0);
+}
+
+.post-time {
+    position: absolute;
+    z-index: 1;
+    top: 24px;
+    right: 40px;
+    /*transform:translate(-50%,0);*/
+    font-size: 12px;
+}
+
+.post-content {
+    position: relative;
+    z-index: 1;
+    top: 40px;
+    left: 100px;
+    right: 25px;
+    font-family: "Arial";
+    font-weight: lighter !important;
+}
+
+.post-like {
+    position: absolute;
+    z-index: 1;
+    top: 100px;
+    right: 23%;
+}
+
+.btn-add {
+    text-align: center;
+    background: #880909;
+    padding: 6px 25px;
+    border: 2px solid #880909;
+    color: white;
+    width: 100px;
+    height: 35px;
+}
+
+.comments-container {
+    position: relative;
+    z-index: 1;
+    top: 20px;
+    left: 5px;
+    right: 5px;
+}
+
+.comment-textarea {
+    margin-top: 20px;
+    width: 100%;
+    height: 20px;
+}
+
+.btn-comment {
+    background: #B13B3B;
+    padding: 2px 4px;
+    border: 1px solid #B13B3B;
+    color: white;
+    margin-left: 5px;
+    margin-top: 3px;
+}
+
+.comment-form{
+}
+
+.comments-list{
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.comment{
+    position: relative;
+}
+
+.comment-text{
+    position: relative;
+    left: 10px;
+}

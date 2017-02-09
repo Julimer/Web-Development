@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Global Stream</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/grumblr.css" rel="stylesheet">
+    <link href="css/globalStream.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="/assets/js/ie-emulation-modes-warning.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body style="">
+
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="login.html" class="navbar-brand" href="#">Grumblr</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <div class="nav navbar-right">
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                  <div>
+                    <img src="images/person2.jpeg" onclick="location.href='profile.html';" class="img-circle" alt="personal icon" width="43" height="43">
+                  </div>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-default btn-md btn-icon-left"><span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+                    </button>
+                </li>
+                <li>
+                    <button type="button" class="btn btn-default btn-md btn-icon-right" onclick="location.href='login.html';" style=""><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
+                    </button>
+                </li>
+              </ul>
+          </div>
+          <form class="navbar-form navbar-left">
+            
+            <input type="text" class="form-control" placeholder="Search...">
+            <button type="button" class="btn btn-default btn-sm btn-search">
+              <span class="glyphicon glyphicon-search icon-search" aria-hidden="true"></span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <div >
+
+        <div class="newpost-container">
+          <form class="navbar-form navbar-left">
+
+            <button type="button" class="btn btn-default btn-sm btn-search">
+              <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+            </button>
+            <input type="text" class="form-control" placeholder="Add a new post within 42 characters...">
+
+          </form>
+        </div>
+
+        <div class="post-container">
+            <div class="post-photo">
+              <img src="images/person3.jpeg" onclick="location.href='profile.html';" class="img-circle" alt="personal icon" width="50" height="50">
+            </div>
+            <div class="post-name">
+                <label>Julianna L.</label>
+            </div>
+            <div class="post-time">
+                <p>30min ago</p>
+            </div>
+            <div class="post-content">
+                <p>Boat cruise is so fun. Love it!</p>
+            </div>
+            <div class="post-like">
+              <button type="button" class="btn btn-default btn-sm" style="background-color:transparent; border:none; outline:none">
+                <span class="glyphicon glyphicon-heart-empty" style="color:black; font-size:1.5em" aria-hidden="true"></span>
+              </button>
+              <label>8</label>
+            </div>
+            <div class="post-comment">
+              <button type="button" class="btn btn-default btn-sm" style="background-color:transparent; border:none; outline:none">
+                <span class="glyphicon glyphicon-comment" style="color:black; font-size:1.5em" aria-hidden="true"></span>
+              </button>
+              <label>3</label>
+            </div>
+        </div>
+        <div class="post-container">
+            <div class="post-photo">
+              <img src="images/person1.jpg" class="img-circle" alt="personal icon" width="50" height="50">
+            </div>
+            <div class="post-name">
+                <label>Andy</label>
+            </div>
+            <div class="post-time">
+                <p>2h ago</p>
+            </div>
+            <div class="post-content">
+                <p>Boat cruise is so fun. Love it!</p>
+            </div>
+            <div class="post-like">
+              <button type="button" class="btn btn-default btn-sm" style="background-color:transparent; border:none; outline:none">
+                <span class="glyphicon glyphicon-heart-empty" style="color:black; font-size:1.5em" aria-hidden="true"></span>
+              </button>
+              <label>8</label>
+            </div>
+            <div class="post-comment">
+              <button type="button" class="btn btn-default btn-sm" style="background-color:transparent; border:none; outline:none">
+                <span class="glyphicon glyphicon-comment" style="color:black; font-size:1.5em" aria-hidden="true"></span>
+              </button>
+              <label>3</label>
+            </div>
+        </div>
+        <div class="post-container">
+            <div class="post-photo">
+              <img src="images/person4.jpg" class="img-circle" alt="personal icon" width="50" height="50">
+            </div>
+            <div class="post-name">
+                <label>Tom Ng</label>
+            </div>
+            <div class="post-time">
+                <p>4 days ago</p>
+            </div>
+            <div class="post-content">
+                <p>Boat cruise is so fun. Love it!</p>
+            </div>
+            <div class="post-like">
+              <button type="button" class="btn btn-default btn-sm" style="background-color:transparent; border:none; outline:none">
+                <span class="glyphicon glyphicon-heart-empty" style="color:black; font-size:1.5em" aria-hidden="true"></span>
+              </button>
+              <label>8</label>
+            </div>
+            <div class="post-comment">
+              <button type="button" class="btn btn-default btn-sm" style="background-color:transparent; border:none; outline:none">
+                <span class="glyphicon glyphicon-comment" style="color:black; font-size:1.5em" aria-hidden="true"></span>
+              </button>
+              <label>3</label>
+            </div>
+        </div>
+        <div class="post-container">
+            <div class="post-photo">
+              <img src="images/person2.jpeg" class="img-circle" alt="personal icon" width="50" height="50">
+            </div>
+            <div class="post-name">
+                <label>Julianna L.</label>
+            </div>
+            <div class="post-time">
+                <p>Aug. 27 2016</p>
+            </div>
+            <div class="post-content">
+                <p>Boat cruise is so fun. Love it!</p>
+            </div>
+            <div class="post-like">
+              <button type="button" class="btn btn-default btn-sm" style="background-color:transparent; border:none; outline:none">
+                <span class="glyphicon glyphicon-heart-empty" style="color:black; font-size:1.5em" aria-hidden="true"></span>
+              </button>
+              <label>8</label>
+            </div>
+            <div class="post-comment">
+              <button type="button" class="btn btn-default btn-sm" style="background-color:transparent; border:none; outline:none">
+                <span class="glyphicon glyphicon-comment" style="color:black; font-size:1.5em" aria-hidden="true"></span>
+              </button>
+              <label>3</label>
+            </div>
+        </div>
+    </div>
+
+
+    </div> <!-- /container -->
+
+    <nav class="navbar navbar-inverse navbar-fixed-bottom">
+      <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" class="nav-bottom-words">Terms</a></li>
+            <li><a href="#" class="nav-bottom-words">Help</a></li>
+            <li><a href="#" class="nav-bottom-words">Contact us</a></li>
+          </ul>
+          <form class="navbar-form navbar-left">
+            <a href="#" class="nav-bottom-words">About Grumblr</a>
+          </form>
+      </div>
+    </nav>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="/dist/js/bootstrap.min.js"></script>
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="/assets/js/vendor/holder.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block title %}Edit Profile{% endblock %}
+
+{% block style %}
+    <link href="{% static 'css/grumblr.css' %}" rel="stylesheet">
+    <link href="{% static 'css/edit.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block navbar_header %}
+    <a class="navbar-brand" href="{% url 'globalStream' %}">Grumblr</a>
+{% endblock %}
+
+{% block navbar_right %}
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <div>
+                <a href="{% url 'profile' user.id %}">
+                    <img src="{{ user.profile.picture.url }}" class="img-circle" alt="personal icon" width="44"
+                         height="44">
+                </a>
+            </div>
+        </li>
+        <li>
+            <a type="button" href="{% url 'globalStream' %}" class="btn btn-default btn-md btn-icon-left"><span
+                    class="glyphicon glyphicon-home nav-glyphicon" aria-hidden="true"></span>
+            </a>
+        </li>
+        <li>
+            <button type="button" class="btn btn-default btn-md btn-icon-mid"><span
+                    class="glyphicon glyphicon-bell nav-glyphicon" aria-hidden="true"></span>
+            </button>
+        </li>
+        <li>
+            <a type="button" class="btn btn-default btn-md btn-icon-right" href="{% url 'userlogout' %}"><span
+                    class="glyphicon glyphicon-log-out nav-glyphicon" aria-hidden="true"></span>
+            </a>
+        </li>
+    </ul>
+{% endblock %}
+
+{% block content %}
+    <div class="register-container">
+        <form enctype="multipart/form-data" class="form-horizontal" method="post" action="{% url 'editProfile' %}">
+            {% csrf_token %}
+
+            <h2 class="reg-welcome">Edit your profile</h2>
+
+            {% if form.errors %}
+                {% for field in form %}
+                    <div id="form-error" class="col-sm-7 col-sm-offset-3">
+                        <p>{{ field.errors|striptags }}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            <div class="form-group form-element">
+                <label for="picture" class="col-sm-3 control-label">{{ form.picture.label }}</label>
+                <div class="col-sm-6">
+                    <img src="{{ picture_url }}" alt="{{ form.picture.name }}" class="img-rounded" width="100"
+                         height="100">
+                    <br><br>
+                    {{ form.picture }}
+                </div>
+            </div>
+
+            <div class="form-group form-element">
+                <label for="username" class="col-sm-3 control-label">{{ form.username.label }}</label>
+                <div class="col-sm-7">
+                    {{ form.username }}
+                </div>
+            </div>
+            <div class="form-group form-element">
+                <label for="firstName" class="col-sm-3 control-label">{{ form.first_name.label }}</label>
+                <div class="col-sm-7">
+                    {{ form.first_name }}
+                </div>
+            </div>
+            <div class="form-group form-element">
+                <label for="lastName" class="col-sm-3 control-label">{{ form.last_name.label }}</label>
+                <div class="col-sm-7">
+                    {{ form.last_name }}
+                </div>
+            </div>
+            <div class="form-group form-element">
+                <label for="age" class="col-sm-3 control-label">Age</label>
+                <div class="col-sm-7">
+                    {{ form.age }}
+                </div>
+            </div>
+            <div class="form-group form-element">
+                <label for="bio" class="col-sm-3 control-label">Bio</label>
+                <div class="col-sm-7">
+                    {{ form.bio }}
+                </div>
+            </div>
+
+            <div class="form-group reg-btn-div">
+                <div class="col-sm-7">
+                    <a class="red-words" href="{% url 'password_change' %}">Change Password</a>
+                </div>
+            </div>
+
+            <div class="form-group reg-btn-div">
+                <div class="col-sm-7 col-sm-offset-3">
+                    <button type="submit" class="btn btn-register">Submit</button>
+                </div>
+            </div>
+
+        </form> <!-- /form -->
+    </div>
+
+{% endblock %}
+

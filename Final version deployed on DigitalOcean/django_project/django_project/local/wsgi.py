@@ -1,0 +1,16 @@
+"""
+WSGI config for django_project project.
+
+It exposes the WSGI callable as a module-level variable named ``application``.
+
+For more information on this file, see
+https://docs.djangoproject.com/en/1.6/howto/deployment/wsgi/
+"""
+
+import os
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "django_project.settings")
+os.environ.setdefault("SECRET_KEY", "iBQ0dOhsvNnYVWl4IzJpr95tBci7GFE6YKcepW8JkzEVw6CETn")
+os.environ.setdefault("EMAIL_PASSWORD", "grumblr.ray")
+
+from django.core.wsgi import get_wsgi_application
+application = get_wsgi_application()
